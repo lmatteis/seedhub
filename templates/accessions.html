@@ -6,18 +6,22 @@
             <thead>
               <tr>
                 <th>Accenumb</th>
-                <th>Center</th>
-                <th>Last Name</th>
-                <th>Language</th>
+                <th>Instcode</th>
+                <th>Cropname</th>
+                <th>Genus</th>
+                <th>Species</th>
               </tr>
             </thead>
             <tbody>
               {{#rows}}
               <tr>
-                <td>{{value}}</td>
                 <td>{{key}}</td>
-                <td>Otto</td>
-                <td>CSS</td>
+                {{#value}}
+                <td>{{INSTCODE}}</td>
+                <td>{{CROPNAME}}</td>
+                <td>{{GENUS}}</td>
+                <td>{{SPECIES}}</td>
+                {{/value}}
               </tr>
               {{/rows}}
             </tbody>

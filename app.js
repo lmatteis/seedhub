@@ -5,7 +5,7 @@ var couchapp = require('couchapp')
 ddoc = 
   { _id:'_design/seedhub'
   , rewrites : 
-    [ {from:"/", to:'_list/accessions/accessionsByCenter', query:{ limit: "10" } }
+    [ {from:"/", to:'_list/accessions/accessionsById', query:{ limit: "10" } }
     , {from:"/login", to:'login.html'}
     , {from:"/api", to:'../../'}
     , {from:"/api/*", to:'../../*'}
@@ -15,10 +15,11 @@ ddoc =
   ;
 
 ddoc.views = {
-  accessionsByCenter: {
+  accessionsById: {
     map: function (doc) {
-      if(doc.INSTCODE && doc.ACCENUMB)
-        emit(doc.INSTCODE, doc.ACCENUMB);
+      if(doc.ACCENUMB) {
+        emit(doc.ACCENUMB, doc);
+      }
     }
   }
 };
