@@ -5,7 +5,7 @@ var couchapp = require('couchapp')
 ddoc = 
   { _id:'_design/seedhub'
   , rewrites : 
-    [ {from:"/", to:'_list/accessions/accessionsByCenter', query:{ limit: 10 } }
+    [ {from:"/", to:'_list/accessions/accessionsByCenter', query:{ limit: "10" } }
     , {from:"/login", to:'login.html'}
     , {from:"/api", to:'../../'}
     , {from:"/api/*", to:'../../*'}
