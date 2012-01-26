@@ -8,7 +8,7 @@ ddoc =
   , rewrites : 
     [ 
       {from:"/", to:'_list/accessions/accessionsById', query:{ limit: "51" } },
-      {from:"/start/:start", to:'_list/accessions/accessionsById', query:{ limit: "11", startkey: ":start" } }
+      {from:"/start/:start", to:'_list/accessions/accessionsById', query:{ limit: "51", startkey: ":start" } }
     , {from:"/login", to:'login.html'}
     , {from:"/api", to:'../../'}
     , {from:"/api/*", to:'../../*'}
