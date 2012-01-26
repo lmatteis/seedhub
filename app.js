@@ -2,10 +2,13 @@ var couchapp = require('couchapp')
   , path = require('path')
   ;
 
+
 ddoc = 
   { _id:'_design/seedhub'
   , rewrites : 
-    [ {from:"/", to:'_list/accessions/accessionsById', query:{ limit: "10" } }
+    [ 
+      {from:"/", to:'_list/accessions/accessionsById', query:{ limit: "51" } },
+      {from:"/start/:start", to:'_list/accessions/accessionsById', query:{ limit: "11", startkey: ":start" } }
     , {from:"/login", to:'login.html'}
     , {from:"/api", to:'../../'}
     , {from:"/api/*", to:'../../*'}
@@ -18,7 +21,7 @@ ddoc.views = {
   accessionsById: {
     map: function (doc) {
       if(doc.ACCENUMB) {
-        emit(doc.ACCENUMB, doc);
+        emit(doc._id, doc);
       }
     }
   }
@@ -26,16 +29,26 @@ ddoc.views = {
 
 ddoc.lists = {
   accessions: function(head, req) {
+    // this should be the same number as the query done on top
+    var rows_per_page = 51; 
+
     provides("html", function(){
       var row,
           Mustache = require("views/lib/mustache"),
           data = {
             title: "SeedHub - All Accessions",
-            rows: []
+            rows: [],
+            next_startkey: false
           };
 
-      while(row = getRow()) {
-        data.rows.push(row);
+      for(var i=0; i<rows_per_page; i++) {
+        row = getRow();
+        if(i === (rows_per_page-1)) {
+          // use the last one for next_link
+          if(row) data.next_startkey = row.key;
+        } else {
+          if(row) data.rows.push(row);
+        }
       }
       var html = Mustache.to_html(this.templates.accessions, data, this.templates.partials);
       return html;

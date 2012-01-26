@@ -15,8 +15,8 @@
             <tbody>
             {{#rows}}
               <tr>
-                <td><span class="label">{{key}}</span></td>
                 {{#value}}
+                <td><span class="label">{{ACCENUMB}}</span></td>
                 <td>{{INSTCODE}}</td>
                 <td>{{CROPNAME}}</td>
                 <td>{{GENUS}}</td>
@@ -28,8 +28,9 @@
           </table>
           <hr />
           <div class="center">
-            <a class="btn info" href="#">Prev</a>
-            <a class="btn info" href="#">Next</a>
+            {{#next_startkey}}
+            <a class="btn info" href="/start/{{next_startkey}}">Next</a>
+            {{/next_startkey}}
           </div>
         </div><!-- /span12 -->
       </div><!-- /row -->
