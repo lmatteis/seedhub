@@ -34,3 +34,7 @@ background-color: white;
 .acc tr span {
   text-shadow: none;
 }
+
+.center {
+  text-align: center;
+}

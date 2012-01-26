@@ -30,7 +30,7 @@ ddoc.lists = {
       var row,
           Mustache = require("views/lib/mustache"),
           data = {
-            title: "All Accessions",
+            title: "SeedHub - All Accessions",
             rows: []
           };
 
