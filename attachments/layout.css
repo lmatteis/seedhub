@@ -3,6 +3,9 @@ body {
   padding-top: 60px;
   background-color: #EEE;
 }
+hr {
+border-top: 1px solid #D6D6D6;
+}
 .acc {
 text-shadow: 1px 1px white;
 }
