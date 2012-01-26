@@ -1,7 +1,17 @@
 body {
   position: relative;
   padding-top: 60px;
+  background-color: #EEE;
 }
-a.brand {
-  font-family: 'PT Sans Narrow', sans-serif;
+.topics .topic a {
+color: #8497B0;
+text-shadow: 1px 1px white;
+overflow: hidden;
+font-size: 1.155em;
+font-weight: normal;
+z-index: 100;
+}
+.topics .topic a:hover {
+background-color: white;
+text-decoration: underline;
 }
