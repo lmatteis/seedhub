@@ -3,15 +3,34 @@ body {
   padding-top: 60px;
   background-color: #EEE;
 }
-.topics .topic a {
-color: #8497B0;
+.acc {
 text-shadow: 1px 1px white;
+}
+.acc span.label {
+  text-shadow: none;
+}
+.acc tr {
 overflow: hidden;
 font-size: 1.155em;
 font-weight: normal;
 z-index: 100;
 }
-.topics .topic a:hover {
+.acc td {
+color: #8497B0;
+}
+.acc td {
+  border:0;
+  cursor: pointer;
+}
+.acc tr:hover td{
 background-color: white;
-text-decoration: underline;
+}
+.acc tr:hover td {
+  text-decoration: underline;
+}
+.acc tr:hover td span.label {
+  text-decoration: none;
+}
+.acc tr span {
+  text-shadow: none;
 }

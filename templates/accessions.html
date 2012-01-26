@@ -2,22 +2,46 @@
 <p id="info-message" class="alert alert-info">Click on an accession to see more info about it.</p>
       <div class="row">
         <div class="span12">
-          <ul class="nav pills stacked topics">
+          <table class="table acc">
+            <thead>
+              <tr>
+                <th>Accenumb</th>
+                <th>Instcode</th>
+                <th>Cropname</th>
+                <th>Genus</th>
+                <th>Species</th>
+              </tr>
+            </thead>
+            <tbody>
             {{#rows}}
+              <tr>
+                <td><span class="label">{{key}}</span></td>
+                {{#value}}
+                <td>{{INSTCODE}}</td>
+                <td>{{CROPNAME}}</td>
+                <td>{{GENUS}}</td>
+                <td>{{SPECIES}}</td>
+                {{/value}}
+              </tr>
+            {{/rows}}
+            </tbody>
+          </table>
+        </div><!-- /span12 -->
+      </div><!-- /row -->
+<!--
             <li class="topic arc"> 
-              <a href="/topic/2012-olympics" data-slug="2012-olympics" data-image="http://msnbcmedia2.msn.com/j/MSNBC/Components/Slideshows/_production/ss-110726-olympics-venues/ss-110726-olympic-venues-15.ss_small.jpg" title="View topic: 2012 Olympics" class="link">
+              <a href="/topic/2012-olympics" data-slug="2012-olympics" data-image="http://msnbcmedia2.msn.com/j/MSNBC/Components/Slideshows/_production/ss-110726-olympics-venues/ss-110726-olympic-venues-15.ss_small.jpg" title="View topic: 2012 Olympics">
                 <i class="icon file"></i>
-                {{key}}
+                <span class="label">{{key}}</span>
+                <span class="underline">
                 {{#value}}
                   {{INSTCODE}}
                   {{CROPNAME}}
                   {{GENUS}}
                   {{SPECIES}}
                 {{/value}}
+                </span>
               </a>
            </li>
-            {{/rows}}
-          </ul>
-        </div><!-- /span12 -->
-      </div><!-- /row -->
+-->
 {{>tail}}
