@@ -31,7 +31,10 @@ background-color: white;
 .acc tr:hover td {
   text-decoration: underline;
 }
-.acc tr:hover td span.label {
+.acc tr:hover td:first-child {
+  text-decoration: none;
+}
+.acc a {
   text-decoration: none;
 }
 .acc tr span {

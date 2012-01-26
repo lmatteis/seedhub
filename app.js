@@ -7,8 +7,9 @@ ddoc =
   { _id:'_design/seedhub'
   , rewrites : 
     [ 
-      {from:"/", to:'_list/accessions/accessionsById', query:{ limit: "51" } },
-      {from:"/start/:start", to:'_list/accessions/accessionsById', query:{ limit: "51", startkey: ":start" } }
+      {from:"/", to:'_list/index/accessionsById', query:{ limit: "51" } },
+      {from:"/start/:start", to:'_list/index/accessionsById', query:{ limit: "51", startkey: ":start" } }
+    , {from:"/accessions/:id", to:'_show/accessions/:id'}
     , {from:"/login", to:'login.html'}
     , {from:"/api", to:'../../'}
     , {from:"/api/*", to:'../../*'}
@@ -28,7 +29,7 @@ ddoc.views = {
 };
 
 ddoc.lists = {
-  accessions: function(head, req) {
+  index: function(head, req) {
     // this should be the same number as the query done on top
     var rows_per_page = 51; 
 
@@ -50,12 +51,34 @@ ddoc.lists = {
           if(row) data.rows.push(row);
         }
       }
-      var html = Mustache.to_html(this.templates.accessions, data, this.templates.partials);
+      var html = Mustache.to_html(this.templates.index, data, this.templates.partials);
       return html;
     });
   }
 }
 
+ddoc.shows = {
+  accessions: function(doc, req) {
+    var Mustache = require("views/lib/mustache"),
+        data = {
+          title: doc.ACCENUMB + " - " + doc.INSTCODE,
+          properties: []
+        };
+
+    for(var i in doc) {
+      if(i === "_id" || i === "_rev" || i === "_revisions") continue;
+      data.properties.push({
+        key: i,
+        value: doc[i]
+      });
+    }
+
+    var html = Mustache.to_html(this.templates.accessions, data, this.templates.partials);
+    return {
+      body: html
+    }
+  }
+}
 ddoc.validate_doc_update = function (newDoc, oldDoc, userCtx) {   
   if (newDoc._deleted === true && userCtx.roles.indexOf('_admin') === -1) {
     throw "Only admin can delete documents on this database.";
