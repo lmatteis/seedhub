@@ -1,0 +1,53 @@
+{{>head}}
+      <div class="row">
+        <div class="span12">
+          <p id="info-message" class="alert alert-info">Click on an accession number to see more info about it.</p>
+          <table class="table acc">
+            <thead>
+              <tr>
+                <th>Accenumb</th>
+                <th>Instcode</th>
+                <th>Cropname</th>
+                <th>Genus</th>
+                <th>Species</th>
+              </tr>
+            </thead>
+            <tbody>
+            {{#rows}}
+              <tr>
+                {{#value}}
+                <td><a href="/accessions/{{_id}}" title="{{ACCENUMB}} - {{INSTCODE}} - {{GENUS}}"><span class="label">{{ACCENUMB}}</span></a></td>
+                <td>{{INSTCODE}}</td>
+                <td>{{CROPNAME}}</td>
+                <td>{{GENUS}}</td>
+                <td>{{SPECIES}}</td>
+                {{/value}}
+              </tr>
+            {{/rows}}
+            </tbody>
+          </table>
+          <hr />
+          <div class="center">
+            {{#next_startkey}}
+            <a class="btn info" href="/start/{{next_startkey}}">Next</a>
+            {{/next_startkey}}
+          </div>
+        </div><!-- /span12 -->
+      </div><!-- /row -->
+<!--
+            <li class="topic arc"> 
+              <a href="/topic/2012-olympics" data-slug="2012-olympics" data-image="http://msnbcmedia2.msn.com/j/MSNBC/Components/Slideshows/_production/ss-110726-olympics-venues/ss-110726-olympic-venues-15.ss_small.jpg" title="View topic: 2012 Olympics">
+                <i class="icon file"></i>
+                <span class="label">{{key}}</span>
+                <span class="underline">
+                {{#value}}
+                  {{INSTCODE}}
+                  {{CROPNAME}}
+                  {{GENUS}}
+                  {{SPECIES}}
+                {{/value}}
+                </span>
+              </a>
+           </li>
+-->
+{{>tail}}
