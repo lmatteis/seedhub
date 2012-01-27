@@ -23,7 +23,6 @@ color: #8497B0;
 }
 .acc td {
   border:0;
-  cursor: pointer;
 }
 .acc tr:hover td{
 background-color: white;
