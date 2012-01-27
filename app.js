@@ -9,6 +9,7 @@ ddoc =
     [ 
       {from:"/", to:'_list/index/accessionsById', query:{ limit: "51" } },
       {from:"/start/:start", to:'_list/index/accessionsById', query:{ limit: "51", startkey: ":start" } }
+    , {from:"/sitemap.xml", to:'_list/sitemap/accessionsById', query:{ limit: "500" } }
     , {from:"/accessions/:id", to:'_show/accessions/:id'}
     , {from:"/login", to:'login.html'}
     , {from:"/api", to:'../../'}
@@ -53,6 +54,21 @@ ddoc.lists = {
       }
       var html = Mustache.to_html(this.templates.index, data, this.templates.partials);
       return html;
+    });
+  },
+  sitemap: function(head, req) {
+    provides("xml", function(){
+      var xml = '<?xml version="1.0" encoding="UTF-8"?>\
+          <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\
+              xmlns:image="http://www.sitemaps.org/schemas/sitemap-image/1.1"\
+              xmlns:video="http://www.sitemaps.org/schemas/sitemap-video/1.1">';
+
+      var row;
+      while(row = getRow()) {
+        xml += '<url><loc>http://www.seedhub.tk/accessions/'+ row.id +'</loc></url>';
+      }
+      xml += '</urlset>';
+      return xml;
     });
   }
 }
