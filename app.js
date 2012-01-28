@@ -9,7 +9,7 @@ ddoc =
     [ 
       {from:"/", to:'_list/index/accessionsById', query:{ limit: "51" } },
       {from:"/start/:start", to:'_list/index/accessionsById', query:{ limit: "51", startkey: ":start" } }
-    , {from:"/sitemap.xml", to:'_list/sitemap/accessionsById', query:{ limit: "500" } }
+    , {from:"/sitemap.xml", to:'_list/sitemap/accessionsById', query:{ limit: "500", startkey: "IITA_TDa-1048" } }
     , {from:"/accessions/:id", to:'_show/accessions/:id'}
     , {from:"/login", to:'login.html'}
     , {from:"/api", to:'../../'}
