@@ -6,6 +6,13 @@ body {
 hr {
 border-top: 1px solid #D6D6D6;
 }
+select {
+  width: 40px;
+}
+.search * {
+  float: left;
+  margin-right: 10px;
+}
 .acc {
 text-shadow: 1px 1px white;
 }
@@ -25,7 +32,23 @@ color: #8497B0;
   border:0;
 }
 .acc tr:hover td{
-background-color: white;
+  background-color: white;
+}
+.acc tr:hover td:first-child {
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.acc tr:hover td:last-child {
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 .acc tr:hover td {
   text-decoration: underline;
