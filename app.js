@@ -12,7 +12,7 @@ ddoc =
     , {from:"/sitemap.xml", to:'_list/sitemap/accessionsById', query:{ limit: "500", startkey: "IITA_TDa-1048" } }
     , {from:"/accessions/:id", to:'_show/accessions/:id'}
     , {from:"/login", to:'login.html'}
-    , {from:"/login", to:'about.html'}
+    , {from:"/about", to:'about.html'}
     , {from:"/api", to:'../../'}
     , {from:"/api/*", to:'../../*'}
     , {from:"/*", to:'*'}
