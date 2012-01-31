@@ -35,11 +35,20 @@ ddoc.lists = {
     // this should be the same number as the query done on top
     var rows_per_page = 51; 
 
+    var title = "SeedHub - ",
+        startkey = req.query.startkey;
+
+    if(startkey) {
+      title += "Accessions starting from " + startkey;
+    } else {
+      title += "All Accessions";
+    }
+
     provides("html", function(){
       var row,
           Mustache = require("views/lib/mustache"),
           data = {
-            title: "SeedHub - All Accessions",
+            title: title,
             rows: [],
             next_startkey: false
           };
