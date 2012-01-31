@@ -2,6 +2,21 @@ body {
   position: relative;
   padding-top: 60px;
   background-color: #EEE;
+  font-size: 15px;
+  text-shadow: 1px 1px white;
+}
+body p {
+font-size: 15px;
+line-height: 150%;
+}
+input, textarea, select, .uneditable-input {
+font-size: 15px;
+}
+a {
+color: #8497B0;
+}
+a.brand {
+  text-shadow: none;
 }
 hr {
 border-top: 1px solid #D6D6D6;
@@ -14,7 +29,6 @@ select {
   margin-right: 10px;
 }
 .acc {
-text-shadow: 1px 1px white;
 }
 .acc span.label {
   text-shadow: none;
