@@ -38,12 +38,19 @@ CouchDB instance. This allows for easy replication and well defined API.
 
 The advantage that CouchDB provides, compared to other databases, is that it comes with a [standard HTTP API](http://wiki.apache.org/couchdb/HTTP_Document_API). Users and developers will be able to take advantage of the standard protocol for their data-exchange needs. 
 
-This makes the data much more dynamic and scalable: pieces of information can easily be moved around different systems or networks with ease; low-connectivity sites can choose to stop data transfers and resume them at other moments of the day when their connection is active; finally, the architecture can become truly decentralized, with many different nodes in many different locations acting as a big central repository for Germplasm data.
+This makes the data much more dynamic and scalable: 
+
+- pieces of information can easily be moved around different systems or networks with ease
+- low-connectivity sites can choose to stop data transfers and resume them at other moments of the day when their connection is active
+- finally, the architecture can become truly decentralized, with many different nodes in many different locations acting as a big central repository for Germplasm data.
 
 ## Data Accessibility 
 
-The types of User Interfaces that can be created with this data are infinite.
-We can build desktop or web applications that are dynamically in-sync with our database. We can allow people to download a local copy of the entire database on their local computer/network - this is perfect for people with low connectivity. 
+What happens when you try and search for a particular accession on Google? Well, nothing. Why is it that things such as *recipes*, *airplane tickets*, *hotels*, *car rentals* are easily searchable, while accessions are not? Is it simply because there's more demand for things such airplane tickets rather than germplasm data? Not really.
+
+The proposal is to structure Genesys 2 following [Semantic Web](http://en.wikipedia.org/wiki/Semantic_Web) guidelines, allowing search engines to gather our data and make it searchable by people all over the world.
+
+This, combined with a more advanced framework ([Elastic Search](http://www.elasticsearch.org/) for example), can truly give rise to a richer search experience and allow people to find accessions just as easily as they're able to find *recipes*.
 
 Here's some examples of applications that could run on this system:
 
@@ -51,7 +58,7 @@ Here's some examples of applications that could run on this system:
 - Map apps with [ArcGIS](http://www.arcgis.com/home/) or [Google Maps](http://code.google.com/apis/maps/index.html)
 - Highly advanced search apps for C&E filtering
 
-For example, one person could easily build an entire application that heavily uses Genesys' data, by simply reading CouchDB's standard protocol.
+One person could easily build an entire application that heavily uses Genesys' data, by simply reading CouchDB's standard protocol.
 
 *more to come…*
 

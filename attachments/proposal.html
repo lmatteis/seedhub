@@ -125,12 +125,22 @@ CouchDB instance. This allows for easy replication and well defined API.</p>
 
 <p>The advantage that CouchDB provides, compared to other databases, is that it comes with a <a href="http://wiki.apache.org/couchdb/HTTP_Document_API">standard HTTP API</a>. Users and developers will be able to take advantage of the standard protocol for their data-exchange needs.</p>
 
-<p>This makes the data much more dynamic and scalable: pieces of information can easily be moved around different systems or networks with ease; low-connectivity sites can choose to stop data transfers and resume them at other moments of the day when their connection is active; finally, the architecture can become truly decentralized, with many different nodes in many different locations acting as a big central repository for Germplasm data.</p>
+<p>This makes the data much more dynamic and scalable:</p>
+
+<ul>
+<li>pieces of information can easily be moved around different systems or networks with ease</li>
+<li>low-connectivity sites can choose to stop data transfers and resume them at other moments of the day when their connection is active</li>
+<li>finally, the architecture can become truly decentralized, with many different nodes in many different locations acting as a big central repository for Germplasm data.</li>
+</ul>
+
 
 <h2>Data Accessibility</h2>
 
-<p>The types of User Interfaces that can be created with this data are infinite.
-We can build desktop or web applications that are dynamically in-sync with our database. We can allow people to download a local copy of the entire database on their local computer/network &ndash; this is perfect for people with low connectivity.</p>
+<p>What happens when you try and search for a particular accession on Google? Well, nothing. Why is it that things such as <em>recipes</em>, <em>airplane tickets</em>, <em>hotels</em>, <em>car rentals</em> are easily searchable, while accessions are not? Is it simply because there&rsquo;s more demand for things such airplane tickets rather than germplasm data? Not really.</p>
+
+<p>The proposal is to structure Genesys 2 following <a href="http://en.wikipedia.org/wiki/Semantic_Web">Semantic Web</a> guidelines, allowing search engines to gather our data and make it searchable by people all over the world.</p>
+
+<p>This, combined with a more advanced framework (<a href="http://www.elasticsearch.org/">Elastic Search</a> for example), can truly give rise to a richer search experience and allow people to find accessions just as easily as they&rsquo;re able to find <em>recipes</em>.</p>
 
 <p>Here&rsquo;s some examples of applications that could run on this system:</p>
 
@@ -141,7 +151,7 @@ We can build desktop or web applications that are dynamically in-sync with our d
 </ul>
 
 
-<p>For example, one person could easily build an entire application that heavily uses Genesys' data, by simply reading CouchDB&rsquo;s standard protocol.</p>
+<p>One person could easily build an entire application that heavily uses Genesys' data, by simply reading CouchDB&rsquo;s standard protocol.</p>
 
 <p><em>more to come…</em></p>
 </body>
