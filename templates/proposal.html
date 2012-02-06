@@ -1,0 +1,57 @@
+{{>head}}
+<h1>Proposal for Genesys 2</h1>
+
+<p>Genesys 1 has shown what type of functionalities are possible to help people discover and order <em>Accessions</em> through a simple web interface. This proposal will concentrate on the <strong>key improvements</strong> that will allow Genesys 2 to become a more mature product by taking advantage of new technologies.</p>
+
+<p>We can breakdown Genesys' main objectives in 3 parts:</p>
+
+<ol>
+<li>Data <strong>retrieval</strong> (retrieving accessions, characterization data, evaluation data, etc..).</li>
+<li>Data <strong>storage</strong> (storing the above information in a central database).</li>
+<li>Data <strong>accessibility</strong> (making all of this data available through advanced search interfaces and programmable APIs).</li>
+</ol>
+
+
+<p>If we dig our way through these objectives we can see that there&rsquo;s lots of room for <strong>improvement</strong>.</p>
+
+<h2>Data Retrieval</h2>
+
+<p>Currently Genesys retrieves its data either through file transfers, where a database manager will manually upload these files into Genesys' database, or through a desktop application called <strong>DDC upload tool</strong>. This tool provides a simple interface for the user to upload accessions passport and C&amp;E data.</p>
+
+<p>The proposal here is to avoid using a monolithic system where we expect data coming from a <strong>single</strong> entry point. Instead open the doors to as many systems as possible:</p>
+
+<ul>
+<li><strong>DDC</strong> – or a system equally powerful for letting people upload data</li>
+<li><strong>Staging Area</strong> &ndash; a web based equivalent to the DDC</li>
+<li><strong>Web Scraping</strong> &ndash; an automated system for retrieving data from many different resources</li>
+<li>etc..</li>
+</ul>
+
+
+<p>Using many different resources for retrieving data will allow Genesys to become less stringent and more comfortable with dealing with data that exists in many different places and in many different formats.</p>
+
+<h2>Data Storage</h2>
+
+<p>The proposal is to have an architecture built around <a href="http://couchdb.org">CouchDB</a>. All the
+accessions, and metadata related to accessions, are saved in a central
+CouchDB instance. This allows for easy replication and well defined API.</p>
+
+<p><img src="/architecture_seedhub.png" alt="image" /></p>
+
+<p><em>The advantage that CouchDB provides, compared to other databases, is that it includes a Standard HTTP API which can be used directly by users and developers &ndash; allowing them to communicate with the database through the standard CouchDB protocol.</em></p>
+
+<h2>Data Accessibility</h2>
+
+<p>We can be very creative with the types of <strong>User Interfaces</strong> we create with this data. We can build desktop or web applications that are dynamically in-sync with our database. We can allow people to download a local copy of the entire database on their local computer/network &ndash; this is perfect for people with low connectivity.</p>
+
+<p>Here&rsquo;s some examples of applications that could run on this system:</p>
+
+<ul>
+<li>Statistical apps</li>
+<li>Map apps with <a href="http://www.arcgis.com/home/">ArcGIS</a> or <a href="http://code.google.com/apis/maps/index.html">Google Maps</a></li>
+<li>Highly advanced search apps for C&amp;E filtering</li>
+</ul>
+
+
+<p><em>more to come…</em></p>
+{{>tail}}
