@@ -12,7 +12,6 @@ ddoc =
     , {from:"/sitemap.xml", to:'_list/sitemap/accessionsById', query:{ limit: "500", startkey: "IITA_TDa-1048" } }
     , {from:"/accessions/:id", to:'_show/accessions/:id'}
     , {from:"/login", to:'login.html'}
-    , {from:"/proposal", to:'_show/proposal'}
     , {from:"/api", to:'../../'}
     , {from:"/api/*", to:'../../*'}
     , {from:"/*", to:'*'}
@@ -100,18 +99,6 @@ ddoc.shows = {
     }
 
     var html = Mustache.to_html(this.templates.accessions, data, this.templates.partials);
-    return {
-      body: html
-    }
-  },
-  proposal: function(doc, req) {
-    // mimics a simple about page 
-    var Mustache = require("views/lib/mustache"),
-        data = {
-          title: "SeedHub - Proposal Genesys 2"
-        };
-
-    var html = Mustache.to_html(this.templates.proposal, data, this.templates.partials);
     return {
       body: html
     }
