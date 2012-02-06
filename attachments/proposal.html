@@ -83,7 +83,7 @@ dd{margin-left:2em;margin-bottom:1em;}
 <body>
 <h1>Proposal for Genesys 2</h1>
 
-<p>Genesys 1 has shown what type of functionalities are possible to help people discover and order <em>Accessions</em> through a simple web interface. This proposal will concentrate on the <strong>key improvements</strong> that will allow Genesys 2 to become a more mature product by taking advantage of new technologies.</p>
+<p>Genesys 1 has shown what type of functionalities are possible to help people discover and order <em>Germplasm Accessions</em> through a simple web interface. This proposal will concentrate on the <strong>key improvements</strong> that will allow Genesys 2 to become a more mature product by taking advantage of new concepts and technologies such as the <a href="http://en.wikipedia.org/wiki/Open_data">Open Data</a> movement and the <a href="http://en.wikipedia.org/wiki/Semantic_Web">Semantic Web</a> formats.</p>
 
 <p>We can breakdown Genesys' main objectives in 3 parts:</p>
 
@@ -94,23 +94,24 @@ dd{margin-left:2em;margin-bottom:1em;}
 </ol>
 
 
-<p>If we dig our way through these objectives we can see that there&rsquo;s lots of room for <strong>improvement</strong>.</p>
+<p>If we dig our way through these objectives we can see that there&rsquo;s lots of room for <strong>improvement</strong>. Genesys, for example, shouldn&rsquo;t serve only as an interface for browsing data, it should provide a true platform for enabling users and developers to interact with this data in a programmatic way.</p>
 
 <h2>Data Retrieval</h2>
 
-<p>Currently Genesys retrieves its data either through file transfers, where a database manager will manually upload these files into Genesys' database, or through a desktop application called <strong>DDC upload tool</strong>. This tool provides a simple interface for the user to upload accessions passport and C&amp;E data.</p>
+<p>Currently Genesys retrieves its data either through file transfers, where database managers manually upload these files into a database, or through a desktop application called <strong>DDC</strong>. This tool provides a simple interface for users to upload passport and C&amp;E data.</p>
 
-<p>The proposal here is to avoid using a monolithic system where we expect data coming from a <strong>single</strong> entry point. Instead open the doors to as many systems as possible:</p>
+<p>The proposal is to avoid using a monolithic system where we expect data coming from a <strong>single</strong> entry point. Instead we can open the doors to many different systems:</p>
 
 <ul>
 <li><strong>DDC</strong> – or a system equally powerful for letting people upload data</li>
 <li><strong>Staging Area</strong> &ndash; a web based equivalent to the DDC</li>
 <li><strong>Web Scraping</strong> &ndash; an automated system for retrieving data from many different resources</li>
-<li>etc..</li>
+<li><strong>GRIN-Global web-services</strong></li>
+<li><em>and others…</em></li>
 </ul>
 
 
-<p>Using many different resources for retrieving data will allow Genesys to become less stringent and more comfortable with dealing with data that exists in many different places and in many different formats.</p>
+<p>Using many different resources for retrieving data, will allow Genesys to become less stringent and more comfortable in dealing with data that exists in many different places and in many different formats.</p>
 
 <h2>Data Storage</h2>
 
@@ -118,13 +119,18 @@ dd{margin-left:2em;margin-bottom:1em;}
 accessions, and metadata related to accessions, are saved in a central
 CouchDB instance. This allows for easy replication and well defined API.</p>
 
+<p><em>Here&rsquo;s what the structure would look like:</em></p>
+
 <p><img src="/architecture_seedhub.png" alt="image" /></p>
 
-<p><em>The advantage that CouchDB provides, compared to other databases, is that it includes a Standard HTTP API which can be used directly by users and developers &ndash; allowing them to communicate with the database through the standard CouchDB protocol.</em></p>
+<p>The advantage that CouchDB provides, compared to other databases, is that it comes with a <a href="http://wiki.apache.org/couchdb/HTTP_Document_API">standard HTTP API</a>. Users and developers will be able to take advantage of the standard protocol for their data-exchange needs.</p>
+
+<p>This makes the data much more dynamic and scalable: pieces of information can easily be moved around different systems or networks with ease; low-connectivity sites can choose to stop data transfers and resume them at other moments of the day when their connection is active; finally, the architecture can become truly decentralized, with many different nodes in many different locations acting as a big central repository for Germplasm data.</p>
 
 <h2>Data Accessibility</h2>
 
-<p>We can be very creative with the types of <strong>User Interfaces</strong> we create with this data. We can build desktop or web applications that are dynamically in-sync with our database. We can allow people to download a local copy of the entire database on their local computer/network &ndash; this is perfect for people with low connectivity.</p>
+<p>The types of User Interfaces that can be created with this data are infinite.
+We can build desktop or web applications that are dynamically in-sync with our database. We can allow people to download a local copy of the entire database on their local computer/network &ndash; this is perfect for people with low connectivity.</p>
 
 <p>Here&rsquo;s some examples of applications that could run on this system:</p>
 
@@ -134,6 +140,8 @@ CouchDB instance. This allows for easy replication and well defined API.</p>
 <li>Highly advanced search apps for C&amp;E filtering</li>
 </ul>
 
+
+<p>For example, one person could easily build an entire application that heavily uses Genesys' data, by simply reading CouchDB&rsquo;s standard protocol.</p>
 
 <p><em>more to come…</em></p>
 </body>
