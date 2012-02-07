@@ -81,7 +81,7 @@ dd{margin-left:2em;margin-bottom:1em;}
 <title>proposal.html</title>
 </head>
 <body>
-<h1>Technical Proposal for Genesys 2 <em>DRAFT</em></h1>
+<h1>Proposal for Genesys 2 <em>DRAFT</em></h1>
 
 <p>Genesys 1 has shown what type of functionalities are possible to help people discover and order <em>Germplasm Accessions</em> through a simple web interface. This proposal will concentrate on the <strong>key improvements</strong> that will allow Genesys 2 to become a more mature product by taking advantage of new concepts and technologies such as the <a href="http://en.wikipedia.org/wiki/Open_data">Open Data</a> movement and the <a href="http://en.wikipedia.org/wiki/Semantic_Web">Semantic Web</a> formats.</p>
 
@@ -98,14 +98,14 @@ dd{margin-left:2em;margin-bottom:1em;}
 
 <h2>Data Retrieval</h2>
 
-<p>Currently Genesys retrieves its data either through file transfers, where database managers manually upload these files into a database, or through a desktop application called <strong>DDC</strong>. This tool provides a simple interface for users to upload passport and C&amp;E data.</p>
+<p>Currently Genesys retrieves its data either through file transfers, where database managers manually upload these files into a database, or through a desktop application called the <strong>DDC</strong>. This tool provides a simple interface for users to upload passport and C&amp;E data.</p>
 
 <p>The proposal is to avoid using a monolithic system where we expect data coming from a <strong>single</strong> entry point. Instead we can open the doors to many different systems:</p>
 
 <ul>
 <li><strong>DDC</strong> – or a system equally powerful for letting people upload data</li>
 <li><strong>Staging Area</strong> &ndash; a web based equivalent to the DDC</li>
-<li><strong>Web Scraping</strong> &ndash; an automated system for retrieving data from many different resources</li>
+<li><strong>Web Scraping</strong> &ndash; an automated system for crawling data from different sites</li>
 <li><strong>GRIN-Global web-services</strong></li>
 <li><em>and others…</em></li>
 </ul>
@@ -123,26 +123,26 @@ CouchDB instance. This allows for easy replication and well defined API.</p>
 
 <p><img src="/architecture_seedhub.png" alt="image" /></p>
 
-<p>The advantage that CouchDB provides, compared to other databases, is that it comes with a <a href="http://wiki.apache.org/couchdb/HTTP_Document_API">standard HTTP API</a>. Users and developers will be able to take advantage of the standard protocol for their data-exchange needs.</p>
+<p>One of the advantages that CouchDB provides, compared to other databases, is that it comes with a <a href="http://wiki.apache.org/couchdb/HTTP_Document_API">standard HTTP API</a>.</p>
 
-<p>This makes the data much more dynamic and scalable:</p>
+<p>This API makes the data much more dynamic and scalable:</p>
 
 <ul>
-<li>pieces of information can easily be moved around different systems or networks with ease</li>
+<li>pieces of information can easily be moved around different systems and networks</li>
 <li>low-connectivity sites can choose to stop data transfers and resume them at other moments of the day when their connection is active</li>
-<li>finally, the architecture can become truly decentralized, with many different nodes in many different locations acting as a big central repository for Germplasm data.</li>
+<li>finally, the architecture can truly become decentralized, with many different nodes in many different geographical locations serving as a big central repository for Germplasm data.</li>
 </ul>
 
 
 <h2>Data Accessibility</h2>
 
-<p>What happens when you try and search for a particular accession on Google? Well, nothing. Why is it that things such as <em>recipes</em>, <em>airplane tickets</em>, <em>hotels</em>, <em>car rentals</em> are easily searchable, while accessions are not? Is it simply because there&rsquo;s more demand for things such airplane tickets rather than germplasm data? Not really.</p>
+<p>We&rsquo;re used to the idea of being able to search for things on popular search engines such as Google or Yahoo. We can easily find <em>food recipes</em>, <em>airplane tickets</em>, <em>cheap hotels</em>, <em>used cars</em> and many other things by simply inserting text in a search box. Unfortunately we cannot do the same for Germplasm Accessions. The proposal is to change that:</p>
 
-<p>The proposal is to structure Genesys 2 following <a href="http://en.wikipedia.org/wiki/Semantic_Web">Semantic Web</a> guidelines, allowing search engines to gather our data and make it searchable by people all over the world.</p>
+<p>If we structure Genesys 2 following <a href="http://en.wikipedia.org/wiki/Semantic_Web">Semantic Web</a> guidelines, we allow search engines to gather our data and make it searchable by people all over the world. This, combined with a more advanced framework (<a href="http://www.elasticsearch.org/">Elastic Search</a> for example), can truly give rise to a richer search experience and allow people to find accessions just as easily as they&rsquo;re able to find <em>food recipes</em>.</p>
 
-<p>This, combined with a more advanced framework (<a href="http://www.elasticsearch.org/">Elastic Search</a> for example), can truly give rise to a richer search experience and allow people to find accessions just as easily as they&rsquo;re able to find <em>recipes</em>.</p>
+<p>Making data accessible through these standard interfaces will increase its distribution, broadening collaboration and accelerating research.</p>
 
-<p>Here&rsquo;s some examples of applications that could run on this system:</p>
+<p>Here&rsquo;s some more examples of applications that could run on top of this system:</p>
 
 <ul>
 <li>Statistical apps</li>
@@ -150,9 +150,5 @@ CouchDB instance. This allows for easy replication and well defined API.</p>
 <li>Highly advanced search apps for C&amp;E filtering</li>
 </ul>
 
-
-<p>One person could easily build an entire application that heavily uses Genesys' data, by simply reading CouchDB&rsquo;s standard protocol.</p>
-
-<p><em>more to come…</em></p>
 </body>
 </html>
