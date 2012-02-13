@@ -1,7 +1,7 @@
 Proposal for Genesys 2 *DRAFT*
 =====
 
-Genesys 1 has shown what type of functionalities are possible to help people discover and order *Germplasm Accessions* through a simple web interface. This proposal will concentrate on the **key improvements** that will allow Genesys 2 to become a more mature product by taking advantage of new concepts and technologies such as the [Open Data](http://en.wikipedia.org/wiki/Open_data) movement and the [Semantic Web](http://en.wikipedia.org/wiki/Semantic_Web) formats.
+This proposal will concentrate on the **key improvements** that will allow Genesys 2 to adapt to an environment that is constantly changing, the web. make data more easily accessible by adapting modern concepts and technologies such as the [Open Data](http://en.wikipedia.org/wiki/Open_data) movement and the [Semantic Web](http://en.wikipedia.org/wiki/Semantic_Web) formats.
 
 We can breakdown Genesys' main objectives in 3 parts:
 
