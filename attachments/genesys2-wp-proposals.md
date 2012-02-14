@@ -21,7 +21,7 @@
 > provide an important linkage to the project governance.  [Indicative
 > budget:  USD80,000 p.a.]
 
-1. [GRIN-Global](http://www.grin-global.org/index.php/Main_Page) will be installed on genebanks networks and serve as primary instrument for allowing germplasm data to be transferred to Genesys. Using a solution such as GRIN-Global will let genebanks' data-curators to store germplasm information using highly specific computer standards. By doing so, data can more easily be analyzed and searched upon.
+1. [GRIN-Global](http://www.grin-global.org/index.php/Main_Page) will be installed on genebanks networks and serve as primary instrument for allowing germplasm data to be transferred to Genesys. Using a solution such as GRIN-Global will allow genebanks' data-curators to store germplasm information using highly specific computer standards. By doing so, data can more easily be analyzed and searched upon.
 
 2. For genebanks unable to install GRIN-Global, a system such as [Web Harvesting](http://en.wikipedia.org/wiki/Web_harvesting) will be used. Genebanks will need to put their data online as HTML formatted websites. Genesys will then automatically gather data from these websites. This allows genebanks to make their data available to Genesys with very little effort. In most cases, genebanks already have websites that we can start using for this data-exchange process.
 
