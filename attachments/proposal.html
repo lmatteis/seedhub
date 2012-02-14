@@ -81,74 +81,225 @@ dd{margin-left:2em;margin-bottom:1em;}
 <title>proposal.html</title>
 </head>
 <body>
-<h1>Proposal for Genesys 2 <em>DRAFT</em></h1>
+<h1>Genesys 2 Work Packages proposals</h1>
 
-<p>Genesys 1 has shown what type of functionalities are possible to help people discover and order <em>Germplasm Accessions</em> through a simple web interface. This proposal will concentrate on the <strong>key improvements</strong> that will allow Genesys 2 to become a more mature product by taking advantage of new concepts and technologies such as the <a href="http://en.wikipedia.org/wiki/Open_data">Open Data</a> movement and the <a href="http://en.wikipedia.org/wiki/Semantic_Web">Semantic Web</a> formats.</p>
+<h2>1) Partnership development</h2>
 
-<p>We can breakdown Genesys' main objectives in 3 parts:</p>
+<blockquote><p>Reaching out to other genebanks around the world to share data on the portal.  It was recognized that GeneSys
+is to be primarily a data portal on germplasm – access to accessions
+is another matter, independent of participation in GeneSys.  Questions
+to be addressed include: how can forest trees be part of this domain,
+research collections, mutant stock, material in private collections,
+or only MLS material, additional “crops” beyond Annex 1? Targeted
+genebanks to become data providers will be identified and prioritized.
+A strategy for acquiring data sets from the priority targets will be
+developed. It is also recognized that there may be communities of
+genebanks (e.g. Article 15) and that networks, such as the European
+network that created EURISCO, should be catered to. The development of
+such networks will be stimulated. All instruments that can help
+institutes or networks become data providers will be developed,
+including awareness raising material, training activities and
+material, but also data sharing agreements and clarity attribution and
+intellectual property issues. This WP is pivotal to GII and will
+provide an important linkage to the project governance.  [Indicative
+budget:  USD80,000 p.a.]</p></blockquote>
 
 <ol>
-<li>Data <strong>retrieval</strong> (retrieving accessions, characterization data, evaluation data, etc..).</li>
-<li>Data <strong>storage</strong> (storing the above information in a central database).</li>
-<li>Data <strong>accessibility</strong> (making all of this data available through advanced search interfaces and programmable APIs).</li>
+<li><p><a href="http://www.grin-global.org/index.php/Main_Page">GRIN-Global</a> will be installed on genebanks networks and serve as primary instrument for allowing germplasm data to be transferred to Genesys. Using a solution such as GRIN-Global will force genebanks' data-curators to store germplasm information using highly specific computer standards. By doing so, data can more easily be analyzed and searched upon.</p></li>
+<li><p>For genebanks unable to install GRIN-Global, a system such as <a href="http://en.wikipedia.org/wiki/Web_harvesting">Web Harvesting</a> will be used. Genebanks will need to put their data online as HTML formatted websites. Genesys will then automatically gather data from these websites. This allows genebanks to make their data available to Genesys with very little effort. In most cases, genebanks already have websites that we can start using for this data-exchange process.</p></li>
+<li><p>To agree on data sharing formats, <a href="http://www.cropontology.org/">Crop Ontology</a> will be used. It will serve as a central repository for documenting the standards used by the various genebanks. For example, one genebank might be measuring the <em>plant height</em> of <em>Rice</em> using <em>centimetres</em>. Another genebank might be using <em>inches</em> for the same trait. All these standards will be documented in the Crop Ontology. By doing so we&rsquo;ll be able to identify traits and convert them into specific formats whenever it is needed.</p></li>
 </ol>
 
 
-<p>If we dig our way through these objectives we can see that there&rsquo;s lots of room for <strong>improvement</strong>. Genesys, for example, shouldn&rsquo;t serve only as an interface for browsing data, it should provide a true platform for enabling users and developers to interact with this data in a programmatic way.</p>
+<h2>2) Data loading mechanisms</h2>
 
-<h2>Data Retrieval</h2>
+<blockquote><p>Developing tools and procedures for pain-free
+data sharing, and providing training in their use as necessary.  The
+data will at some stage have to be made visible via the GII web
+interface. This can be achieved via several options that will all be
+made available. The current Direct Data Control (DDC) utility is one
+option that might need enhancement, but also other uploading
+mechanisms will be explored. Web Services functionality is another
+necessary option that needs to be made available. This will not be
+developed from scratch but through use, or further development, of the
+GBIF Integrated Provider Toolkit (IPT). Data quality assessment tools
+will be required to be integrated with uploading options. This is
+anticipated to be a short term WP and the mechanisms should only
+require intermittent maintenance.  It is possible that additional
+options may be required in the future. All options will be completely
+documented and data sources will be advised about the most appropriate
+option for their situation and supported in the adoption of that
+method.  [Indicative budget:  USD60,000 for initial development,
+followed by USD10,000 p.a. thereafter.]</p></blockquote>
 
-<p>Currently Genesys retrieves its data either through file transfers, where database managers manually upload these files into a database, or through a desktop application called the <strong>DDC</strong>. This tool provides a simple interface for users to upload passport and C&amp;E data.</p>
+<ol>
+<li><p>The current DDC application will continue to be used and improved. The idea is to build a <em>standard HTTP API</em> for data exchange that the DDC will use. This will provide a solid foundation for developers and users that may want to upload data in formats that are not supported by the DDC.</p></li>
+<li><p>Another interface for data loading will be build, called the <em>Staging Area</em>. It will provide the same functionalities as the DDC, but through a web-interface. This will make the upload system available to a broader audience without obligating users to install an application.</p></li>
+<li><p><em>Web Scraping</em> will also be used. It will allow us to automatically download data from a genebank&rsquo;s website. The automated exchange process will facilitate the acquisition of data, allowing Genesys to reach sources of information that it couldn&rsquo;t before.</p></li>
+<li><p>Once GRIN-Global will be installed on the genebank&rsquo;s networks, Genesys will be able to communicate directly with the genebank&rsquo;s database using standard web-services. This will completely automate the data-exchange process.</p></li>
+<li><p>All the exchanges of data will happen through standard network protocols (such as HTTP) and the data formats will be documented using the <a href="http://www.cropontology.org/">Crop Ontology</a> tool. Using standard protocols will allow Genesys to use available software libraries without rewriting everything from scratch.</p></li>
+</ol>
 
-<p>The proposal is to avoid using a monolithic system where we expect data coming from a <strong>single</strong> entry point. Instead we can open the doors to many different systems:</p>
+
+<h2>3) Data curation</h2>
+
+<blockquote><p>Developing and implementing tools and procedures for
+data quality checking and improvement.  Data standards are an
+essential component of any PGR information system. Accession-level
+standards have been developed by IPGRI/Bioversity and are in common
+use by genebanks, especially for passport data as the Multi-Crop
+Passport Descriptors (MCPD), and GCP supported ontologies. Some
+communities will have additional passport descriptors which will be
+integrated on an ‘as appropriate’ basis. There has been a draft
+standard for C &amp; E data developed in the first phase of GeneSys, which
+will require further discussion before validation. [Indicative budget:
+USD200,000 p.a.]</p></blockquote>
+
+<ol>
+<li><p>Data quality tools will be built using the <a href="http://www.cropontology.org/api">Crop Ontology API</a>. The tools will communicate dynamically with this repository, allowing them to always stay up-to-date with the latest standards.</p></li>
+<li><p>The <a href="http://www.cropontology.org/">Crop Ontology</a> will serve as a central place for curators to share and discuss data standards. Genesys will be able to use these standards programmatically through the Crop Ontology API and benefit from these connections in its internal routines.</p></li>
+</ol>
+
+
+<h2>4) Facilitating germplasm use</h2>
+
+<blockquote><p>Adding analytical functionality and streamlined access to data to the
+GeneSys portal.  This involves the development of a spectrum of tools
+for looking at and/or extracting data from GENESYS. The most visible
+will be the web interface based on the current GENESYS web page. But
+there will be several alternatives. For example, an API will be
+developed with web services to allow third parties to automatically
+harvest data from GENESYS. But it will also be possible to extract
+specific accession-level data in Excel, or comma separated files.
+These interfaces will allow any user to search the data, and use it in
+projects like ICARDA’s FIGS initiative, CIAT’s Atlas initiative and
+CIMMYT’s SeeD initiative. For any utilization the attribution and
+intellectual property issues will need to communicated very clearly
+with the users. [Indicative budget:  USD60,000 for initial
+development, followed by USD10,000 p.a. thereafter.]</p></blockquote>
+
+<ol>
+<li><p>The entire Genesys database will be made available through a <a href="http://wiki.apache.org/couchdb/HTTP_Document_API">standard HTTP API</a>. This will facilitate access of the data and allow users and developers to more easily build third-party applications around it. The API makes the data more dynamic and scalable:</p>
 
 <ul>
-<li><strong>DDC</strong> – or a system equally powerful for letting people upload data</li>
-<li><strong>Staging Area</strong> &ndash; a web based equivalent to the DDC</li>
-<li><strong>Web Scraping</strong> &ndash; an automated system for crawling data from different sites</li>
-<li><strong>GRIN-Global web-services</strong></li>
-<li><em>and others…</em></li>
+<li>Pieces of information can easily be moved around different systems and networks.</li>
+<li>Low-connectivity sites can choose to stop data transfers and resume them at other moments of the day when their connection is active.</li>
+<li>Finally, the architecture can truly become decentralized, with many different nodes in many different geographical locations serving as a big central repository for Germplasm data.</li>
 </ul>
+</li>
+<li><p>Internal analytic interfaces will be built by the Genesys team that will communicate directly with this API. Sharing a common API for database communication is very important as it allows us to build highly complex interfaces with very little cost.</p></li>
+</ol>
 
 
-<p>Using many different resources for retrieving data, will allow Genesys to become less stringent and more comfortable in dealing with data that exists in many different places and in many different formats.</p>
+<h2>5) Crop Registry integration</h2>
 
-<h2>Data Storage</h2>
+<blockquote><p>The objective of this small WP is to include the current functionality
+of some of the Crop Registries developed in GPG2 in GII to identify
+and cross reference accessions that are (probably) identical but held
+in different genebanks. Also the Crop Registries will be used as
+additional data sources, in the case where holding genebanks have not
+previously become GII data providers. It will allow for future
+expansion, or potentially extraction, of Crop Registries.  [Indicative
+budget:  USD200,000 for initial development, followed by USD20,000
+p.a. thereafter.]</p></blockquote>
 
-<p>The proposal is to have an architecture built around <a href="http://couchdb.org">CouchDB</a>. All the
-accessions, and metadata related to accessions, are saved in a central
-CouchDB instance. This allows for easy replication and well defined API.</p>
+<ol>
+<li>no comments</li>
+</ol>
+
+
+<h2>6.1) Addressing issues and planning</h2>
+
+<blockquote><p>In order to continue to address the requirements of all stakeholder
+and user audiences a number of technical issues need to be discussed,
+resolved and implemented. These would include the need for a
+‘universal identifier’ (or UID) that would enable the linkage required
+to identify accessions and other genotype entities across different
+information systems. A research activity to establish options for
+linkage to breeders’ data, such as that managed in some ICIS
+installations would also be undertaken. Another discussion is required
+to build upon the draft C &amp; E data standards developed by G 1.0; this
+will enable a global standard for this type of data to be validated
+and published for international use.</p></blockquote>
+
+<ol>
+<li><p>Accessions in Genesys' database will use Universal Identifiers. In particular they will adopt the <a href="http://www.doi.org/">DOI</a> format which is the most popular standard for digital information. It&rsquo;s easy to lose information in the vastness of the internet. Using a system such as DOI will allow us to identify accessions, and other digital information, even when the data is transferred from one database to another.</p></li>
+<li><p>Genesys' HTML web-interface will be structured following <a href="http://en.wikipedia.org/wiki/Semantic_Web">Semantic Web</a> guidelines. This will allow Genesys to become searchable through search engines such as Google. By doing this we will increase accessibility of germplasm data to a much broader audience.</p></li>
+</ol>
+
+
+<h2>6.2) User friendly interface</h2>
+
+<blockquote><p>The GII interface will need to address a broad audience and give each
+group an intuitive entry point. This will involve continual input from
+different user groups and subsequent planning, design and
+implementation of changes. A proactive user feedback mechanism will be
+developed to ensure portal applicability and its ongoing utility to
+all user groups. This will also involve extending the interface and
+data content languages beyond English.</p></blockquote>
+
+<ol>
+<li><p>Genesys will use <a href="http://en.wikipedia.org/wiki/HTML5">HTML5</a> for its web-interface. HTML5 is an incredibly powerful technology capable of representing highly complex interfaces. We will benefit from the software libraries available in open-source communities. This will let us create intuitive interfaces with very little cost and time.</p></li>
+<li><p>In combination with standards such as CSS, JavaScript and Canvas we can easily generate graphs, diagrams and charts directly on Genesys' website &ndash; without the need of installing third-party applications. In combination with frameworks such as <a href="http://documentcloud.github.com/backbone/#examples">Backbone.js</a>, Genesys will have a highly intuitive and easy to use interface.</p></li>
+</ol>
+
+
+<h2>6.3) Data attribution</h2>
+
+<blockquote><p>Ensuring data sharers are correctly attributed for their contribution
+is an important feature to obtain the support of global data sharers.
+Reviewing the Data Sharing Agreement (DSA) and Terms and Conditions of
+Use (TCU) will be undertaken in concert with the governance and
+technical management components of the proposed GeneSys II project.</p></blockquote>
+
+<ol>
+<li>no comments</li>
+</ol>
+
+
+<h2>6.4) Scalability through flexible design and structure</h2>
+
+<blockquote><p>All information systems require flexibility in design and structure to
+facilitate future changes in scope and other developments.  The
+ability to quickly add additional descriptors (e.g. citations), some
+of which may be community specific, functionality and features is seen
+as critical and the database schema will therefore undergo periodic
+review and modification to ensure system design is always optimal
+thereby providing rapid interface response times. This will at some
+stage require changes in hardware and software to increase access
+bandwidth and system capacity as the use of GII increases; thus
+optimal resource management is also a component of this work package.</p></blockquote>
+
+<ol>
+<li>Genesys' database architecture will be built around scalable solutions. Technology such as <a href="http://en.wikipedia.org/wiki/Cloud_computing">Cloud Computing</a> and <a href="http://en.wikipedia.org/wiki/NoSQL">NoSQL</a> databases will the foundation of the database design. This allows data to be highly available across different geographical locations. The schema-less capabilities of NoSQL databases will allow Genesys to more easily store data that is structured in many different formats.</li>
+</ol>
+
 
 <p><em>Here&rsquo;s what the structure would look like:</em></p>
 
 <p><img src="/architecture_seedhub.png" alt="image" /></p>
 
-<p>One of the advantages that CouchDB provides, compared to other databases, is that it comes with a <a href="http://wiki.apache.org/couchdb/HTTP_Document_API">standard HTTP API</a>.</p>
+<h2>6.5) WP communication</h2>
 
-<p>This API makes the data much more dynamic and scalable:</p>
+<blockquote><p>Because GeneSys II will involve a coalition of participants that are
+globally distributed an effective communication strategy is essential.
+This will involve interaction between WP participants and, on a case
+by case basis, external collaborators to ensure targeted, effective
+and efficient delivery.</p></blockquote>
 
-<ul>
-<li>pieces of information can easily be moved around different systems and networks</li>
-<li>low-connectivity sites can choose to stop data transfers and resume them at other moments of the day when their connection is active</li>
-<li>finally, the architecture can truly become decentralized, with many different nodes in many different geographical locations serving as a big central repository for Germplasm data.</li>
-</ul>
+<ol>
+<li>A system such as <a href="http://github.com/">GitHub</a> will allow the participants to collaborate and communicate on the features being developed. It&rsquo;s the most used code-repository in the world. Linux, the most popular open-source software project, also uses GitHub to have people in the team collaborate effectively.</li>
+</ol>
 
 
-<h2>Data Accessibility</h2>
+<h2>6.6) High Performance Equipment</h2>
 
-<p>We&rsquo;re used to the idea of being able to search for things on popular search engines such as Google or Yahoo. We can easily find <em>food recipes</em>, <em>airplane tickets</em>, <em>cheap hotels</em>, <em>used cars</em> and many other things by simply inserting text in a search box. Unfortunately we cannot do the same for Germplasm Accessions. The proposal is to change that:</p>
+<blockquote><p>Based on the volume of data, and anticipated functionality, high
+performance server(s) will be required.</p></blockquote>
 
-<p>If we structure Genesys 2 following <a href="http://en.wikipedia.org/wiki/Semantic_Web">Semantic Web</a> guidelines, we allow search engines to gather our data and make it searchable by people all over the world. This, combined with a more advanced framework (<a href="http://www.elasticsearch.org/">Elastic Search</a> for example), can truly give rise to a richer search experience and allow people to find accessions just as easily as they&rsquo;re able to find <em>food recipes</em>.</p>
-
-<p>Making data accessible through these standard interfaces will increase its distribution, broadening collaboration and accelerating research.</p>
-
-<p>Here&rsquo;s some more examples of applications that could run on top of this system:</p>
-
-<ul>
-<li>Statistical apps</li>
-<li>Map apps with <a href="http://www.arcgis.com/home/">ArcGIS</a> or <a href="http://code.google.com/apis/maps/index.html">Google Maps</a></li>
-<li>Highly advanced search apps for C&amp;E filtering</li>
-</ul>
+<ol>
+<li><a href="http://en.wikipedia.org/wiki/Cloud_computing">Cloud Computing</a> will be used to host Genesys and allow it to face high processing and bandwidth demands.</li>
+</ol>
 
 </body>
 </html>
