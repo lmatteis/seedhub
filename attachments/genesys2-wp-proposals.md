@@ -170,7 +170,7 @@
 > bandwidth and system capacity as the use of GII increases; thus
 > optimal resource management is also a component of this work package.
 
-1. Genesys' database architecture will be built around scalable solutions. Technology such as [Cloud Computing](http://en.wikipedia.org/wiki/Cloud_computing) and [NoSQL](http://en.wikipedia.org/wiki/NoSQL) databases will the foundation of the database design. This allows data to be highly available across different geographical locations. The schema-less capabilities of NoSQL databases will allow Genesys to more easily store data that is structured in many different formats.
+1. Genesys' database architecture will be built around scalable solutions. Technology such as [Cloud Computing](http://en.wikipedia.org/wiki/Cloud_computing) and [NoSQL](http://en.wikipedia.org/wiki/NoSQL) databases will be the foundation of the database design. This allows data to be highly available across different geographical locations. The schema-less capabilities of NoSQL databases will allow Genesys to more easily store data that is structured in many different formats.
 
 *Here's what the structure would look like:*
 
