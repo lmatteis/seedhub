@@ -7,7 +7,8 @@ ddoc =
   { _id:'_design/seedhub'
   , rewrites : 
     [ 
-      {from:"/", to:'_list/index/accessionsById', query:{ limit: "51" } },
+      /*{from:"/", to:'_list/index/accessionsById', query:{ limit: "51" } },*/
+      {from:"/", to:'index.html'},
       {from:"/start/:start", to:'_list/index/accessionsById', query:{ limit: "51", startkey: ":start" } }
     , {from:"/sitemap.xml", to:'_list/sitemap/accessionsById', query:{ limit: "500", startkey: "IITA_TDa-1048" } }
     , {from:"/accessions/:id", to:'_show/accessions/:id'}
