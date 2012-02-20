@@ -2,13 +2,13 @@
 
 *Older document can be found [here](proposal.html)*.
 
-In this proposal I'll extrapolate the main concepts out of the 6 work-packages and provide implementation details regarding each one of them.
+In this proposal I'll extrapolate the main concepts out of the *6 work-packages* and provide implementation details regarding each one of them.
 
-- [Redesigning the interface](#ui)
-- [Building a platform](#)
+- [Redesigning the Interface](#ui)
+- [Building a Platform](#)
 - ...
 
-## <a name="ui"></a> Redesigning the interface
+## <a name="ui"></a> Redesigning the Interface
 
 A software project should always start by building its [User Interface](http://en.wikipedia.org/wiki/User_interface). Even though software is made out of many different components, the foremost concern should be appearance—what and how information is presented.
 
@@ -23,15 +23,15 @@ Genesys main feature is to provide a way for people to search (and order) **Germ
 
 The user will use the answers to compare the available Germplasm and decide upon which ones to order.
 
-#### Find samples with specific trait values 
+#### Where do I find samples with specific trait values? 
 
 Consider this redesign:
 
 ![img](traits.jpg)    
 
-Using *plaint text english* the user is guided through the process of selecting a range of values for a number of traits. The users can then immediately filter and download a portion of samples they're interested in. This is what they came on the site for. They were able to answer their question immediately, through a single page interface.
+The user is guided through the process of selecting a range of values for a number of traits. They can then filter and download the portion of samples they're interested in. They were able to answer their question immediately, through a single page interface.
 
-#### Find samples with specific passport information 
+#### Where do I find samples with specific passport information?
 
 
 *more to come…*
