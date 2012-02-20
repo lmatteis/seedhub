@@ -14,17 +14,24 @@ A software project should always start by building its [User Interface](http://e
 
 The designer should ask: What is relevant information? What questions will the viewers ask? What situations will they want to compare? What decisions are they trying to make? How can the data be presented most effectively? How can the visual vocabulary and techniques of graphic design be employed to direct the user’s eyes to the solution? The designer must start by considering what the software looks like, because the users are using it to learn, and they learn by looking at it.
 
-Genesys main feature is to provide a way for people to search (and order) **germplasm accessions**. If a user is searching for this information, what questions might they have? 
+Genesys main feature is to provide a way for people to search (and order) **Germplasm accessions**. If a user is searching for this information, what questions might they have? 
 
 - Where do I find samples with specific trait values?
 - Where do I find samples with specific passport information?
 - Which Genebank holds them?
-- How do I download the experiments done on these samples?
+- Can I download experiments associated to an accession?
 
+The user will use the answers to compare the available Germplasm and decide upon which ones to order.
 
 #### Find samples with specific trait values 
 
+Consider this redesign:
 
 ![img](traits.jpg)    
+
+Using *plaint text english* the user is guided through the process of selecting a range of values for a number of traits. The users can then immediately filter and download a portion of samples they're interested in. This is what they came on the site for. They were able to answer their question immediately, through a single page interface.
+
+#### Find samples with specific passport information 
+
 
 *more to come…*
