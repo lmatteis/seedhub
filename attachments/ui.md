@@ -29,7 +29,7 @@ Consider this redesign:
 
 ![img](traits.jpg)    
 
-The user is guided through the process of selecting a range of values for a number of traits. They can then filter and download the portion of samples they're interested in. They were able to answer their question immediately, through a single page interface.
+The user is guided through the process of selecting a range of values for a number of traits. They can then filter and download the portion of samples they're interested in. They are able to answer their question immediately, through a single page interface.
 
 #### Where do I find samples with specific passport information?
 
