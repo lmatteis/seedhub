@@ -1,4 +1,11 @@
-# Genesys 2
+# Genesys 2 *(DRAFT)*
+
+*older document can be found [here](proposal.html)*
+
+In this proposal I'll extrapolate the main concepts and features out of the 6 work-packages for improving Genesys functionalities.
+
+- [Building a platform](http://bhavin.directi.com/building-platforms-vs-building-applications-part-1-of-3/)
+- User Interface
 
 A software project should always start by building its *User Interface*. Even though software is made out of many different components, the foremost concern should be appearance—what and how information is presented.
 
@@ -16,3 +23,5 @@ Genesys main feature is to provide a way for people to search (and order) **germ
 
 
 ![img](traits.jpg)    
+
+*more to come…*
