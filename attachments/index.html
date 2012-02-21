@@ -206,6 +206,26 @@ a:hover   { text-decoration:underline; }
 
 <h2><a name="platform"></a> Building a Platform</h2>
 
+<p>Firstly, let&rsquo;s cover, briefly—what exactly is a Platform vs an Application. In a nutshell any application which provides ways to:</p>
+
+<ul>
+<li>Customize the experience of the application</li>
+<li>Extend the functionality of the application</li>
+<li>Pull data out of the application</li>
+<li>Interact with the application through a programming interface… is a <em>Platform</em>.</li>
+</ul>
+
+
+<p>By building your application around this concept you enable others to extend the functionality of your application in ways you didn&rsquo;t think of, or didn&rsquo;t have resource for. This results in more features, developed at a faster pace.</p>
+
+<p>This allows us to build a truly open ecosystem of applications built around the same data. For example, we&rsquo;ll be able to collaborate with teams that have more experience in doing data-analysis and allow them to transparently use Genesys' data. These teams will know nothing about the implementation details and therefore require no training—they know only of the platform and standard data exchange formats.</p>
+
+<p>A platform promotes separation between the <em>interface</em> (what the user sees) and the <em>implementation</em> (how data is stored, where data comes from).</p>
+
+<p><img src="platform.001.jpg" alt="img" /></p>
+
+<p>One engineering advantage of this design is that the implementation component can be modified and refactored without breaking the various interface components. This is a truly comfortable environment for developers to more easily develop around Genesys' data.</p>
+
 <h2><a name="ui"></a> Redesigning the Interface</h2>
 
 <p>A software project should always start by building its <a href="http://en.wikipedia.org/wiki/User_interface">User Interface</a>. Even though software is made out of many different components, the foremost concern should be appearance—what and how information is presented.</p>
