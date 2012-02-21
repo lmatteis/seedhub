@@ -19,13 +19,13 @@ Firstly, let's cover briefly what exactly a Platform is. In a nutshell any appli
 
 By building an application around these concepts we enable others to extend the functionality of our application in ways we didn't think of, or didn't have resources for. This results in more features, developed at a faster pace.
 
-It promotes a truly open and transparent access to data, allowing different teams to work on different functionalities. The teams will only need to know of the platform and standard data exchange formats, to be able to interact with the data. 
-
-A platform promotes separation between the interface (what the user sees) and the implementation details (how data is stored, where data comes from). 
+It promotes a truly open and transparent access to data, allowing different teams to work on different functionalities. The teams will only need to know of the platform and standard data exchange formats to be able to interact with the data.  
 
 ![img](platform.001.jpg)
 
-One engineering advantage of this design is that the "black box" component can be modified and refactored without breaking the various interface components. This is a truly comfortable environment for developers to more easily develop new tools on top of Genesys' data.
+The components above the platform are **views**. This is the software that the user sees and interacts with. Views interact with the platform by *requesting* data. The map, for example, would request data that has a geographical location associated with it and then display it.
+
+The components below the platform are inside a **black box**. They're hidden from the user. The idea is to abstract all the implementation details so that we may refactor the components in the future, without ever breaking the views. This is a truly modular design and it will allow developers to more easily develop new tools on top of Genesys' data.
 
 ## <a name="ui"></a> Redesigning the Interface
 
