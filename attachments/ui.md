@@ -25,7 +25,7 @@ It promotes a truly open and transparent access to data, allowing different team
 
 The components above the platform are **views**. This is the software that the user sees and interacts with. Views interact with the platform by *requesting* data. The map, for example, would request data that has a geographical location associated with it and then display it.
 
-The components below the platform are inside a **black box**. They're hidden from the user. The idea is to abstract all the implementation details so that we may refactor the components in the future, without ever breaking the views. This is a truly modular design and it will allow developers to more easily develop new tools on top of Genesys' data.
+The components below the platform are the **data sources**. All of them make up the many different sources we might have to obtain data. Through the platform we're abstracting all the implementation details so that we may refactor these components in the future, without ever breaking the views. This is a truly modular design and it will allow developers to more easily develop new tools on top of Genesys' data.
 
 ## <a name="ui"></a> Redesigning the Interface
 
