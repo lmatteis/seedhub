@@ -4,9 +4,12 @@
 
 In this proposal I'll extrapolate the main concepts out of the *6 work-packages* and provide implementation details regarding each one of them.
 
+- [Building a Platform](#platform)
 - [Redesigning the Interface](#ui)
-- [Building a Platform](#)
 - ...
+
+## <a name="platform"></a> Building a Platform
+
 
 ## <a name="ui"></a> Redesigning the Interface
 
@@ -34,4 +37,4 @@ The user is guided through the process of selecting a range of values for a numb
 #### Where do I find samples with specific passport information?
 
 
-*more to come…*
+*more to come…* 
