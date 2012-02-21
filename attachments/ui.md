@@ -2,7 +2,7 @@
 
 *Older document can be found [here](proposal.html)*.
 
-In this proposal I'll extrapolate the main concepts out of the *6 work-packages* and provide implementation details regarding each one of them.
+In this proposal I'll extract the main concepts out of the *6 work-packages* and provide implementation details regarding each one of them.
 
 - [Building a Platform](#platform)
 - [Redesigning the Interface](#ui)
@@ -10,22 +10,22 @@ In this proposal I'll extrapolate the main concepts out of the *6 work-packages*
 
 ## <a name="platform"></a> Building a Platform
 
-Firstly, let's cover, briefly—what exactly is a Platform vs an Application. In a nutshell any application which provides ways to:
+Firstly, let's cover briefly what exactly a Platform is. In a nutshell any application which provides ways to:
 
-- Customize the experience of the application
-- Extend the functionality of the application
-- Pull data out of the application
-- Interact with the application through a programming interface… is a *Platform*.
+- Customize its experience
+- Extend its functionality
+- Pull data out of it
+- Interact with it through a programming interface… is a *Platform*.
 
-By building your application around this concept you enable others to extend the functionality of your application in ways you didn't think of, or didn't have resource for. This results in more features, developed at a faster pace.
+By building an application around these concepts we enable others to extend the functionality of our application in ways we didn't think of, or didn't have resources for. This results in more features, developed at a faster pace.
 
-This allows us to build a truly open ecosystem of applications built around the same data. For example, we'll be able to collaborate with teams that have more experience in doing data-analysis and allow them to transparently use Genesys' data. These teams will know nothing about the implementation details and therefore require no training—they know only of the platform and standard data exchange formats.
+It promotes a truly open and transparent access to data, allowing different teams to work on different functionalities. The teams will only need to know of the platform and standard data exchange formats, to be able to interact with the data. 
 
-A platform promotes separation between the *interface* (what the user sees) and the *implementation* (how data is stored, where data comes from).
+A platform promotes separation between the interface (what the user sees) and the implementation details (how data is stored, where data comes from). 
 
 ![img](platform.001.jpg)
 
-One engineering advantage of this design is that the implementation component can be modified and refactored without breaking the various interface components. This is a truly comfortable environment for developers to more easily develop around Genesys' data.
+One engineering advantage of this design is that the "black box" component can be modified and refactored without breaking the various interface components. This is a truly comfortable environment for developers to more easily develop new tools on top of Genesys' data.
 
 ## <a name="ui"></a> Redesigning the Interface
 

@@ -195,7 +195,7 @@ a:hover   { text-decoration:underline; }
 
 <p><em>Older document can be found <a href="proposal.html">here</a></em>.</p>
 
-<p>In this proposal I&rsquo;ll extrapolate the main concepts out of the <em>6 work-packages</em> and provide implementation details regarding each one of them.</p>
+<p>In this proposal I&rsquo;ll extract the main concepts out of the <em>6 work-packages</em> and provide implementation details regarding each one of them.</p>
 
 <ul>
 <li><a href="#platform">Building a Platform</a></li>
@@ -206,25 +206,25 @@ a:hover   { text-decoration:underline; }
 
 <h2><a name="platform"></a> Building a Platform</h2>
 
-<p>Firstly, let&rsquo;s cover, briefly—what exactly is a Platform vs an Application. In a nutshell any application which provides ways to:</p>
+<p>Firstly, let&rsquo;s cover briefly what exactly a Platform is. In a nutshell any application which provides ways to:</p>
 
 <ul>
-<li>Customize the experience of the application</li>
-<li>Extend the functionality of the application</li>
-<li>Pull data out of the application</li>
-<li>Interact with the application through a programming interface… is a <em>Platform</em>.</li>
+<li>Customize its experience</li>
+<li>Extend its functionality</li>
+<li>Pull data out of it</li>
+<li>Interact with it through a programming interface… is a <em>Platform</em>.</li>
 </ul>
 
 
-<p>By building your application around this concept you enable others to extend the functionality of your application in ways you didn&rsquo;t think of, or didn&rsquo;t have resource for. This results in more features, developed at a faster pace.</p>
+<p>By building an application around these concepts we enable others to extend the functionality of our application in ways we didn&rsquo;t think of, or didn&rsquo;t have resources for. This results in more features, developed at a faster pace.</p>
 
-<p>This allows us to build a truly open ecosystem of applications built around the same data. For example, we&rsquo;ll be able to collaborate with teams that have more experience in doing data-analysis and allow them to transparently use Genesys' data. These teams will know nothing about the implementation details and therefore require no training—they know only of the platform and standard data exchange formats.</p>
+<p>It promotes a truly open and transparent access to data, allowing different teams to work on different functionalities. The teams will only need to know of the platform and standard data exchange formats, to be able to interact with the data.</p>
 
-<p>A platform promotes separation between the <em>interface</em> (what the user sees) and the <em>implementation</em> (how data is stored, where data comes from).</p>
+<p>A platform promotes separation between the interface (what the user sees) and the implementation details (how data is stored, where data comes from).</p>
 
 <p><img src="platform.001.jpg" alt="img" /></p>
 
-<p>One engineering advantage of this design is that the implementation component can be modified and refactored without breaking the various interface components. This is a truly comfortable environment for developers to more easily develop around Genesys' data.</p>
+<p>One engineering advantage of this design is that the &ldquo;black box&rdquo; component can be modified and refactored without breaking the various interface components. This is a truly comfortable environment for developers to more easily develop new tools on top of Genesys' data.</p>
 
 <h2><a name="ui"></a> Redesigning the Interface</h2>
 
