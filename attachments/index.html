@@ -188,19 +188,18 @@ a:hover   { text-decoration:underline; }
 	display:none;
 }
 </style>
-<title>index.html</title>
+<title>Genesys 2 (DRAFT)</title>
 </head>
 <body>
-<h1>Genesys 2 <em>(DRAFT)</em></h1>
+<h1>Genesys 2 (DRAFT)</h1>
 
 <p><em>Older document can be found <a href="proposal.html">here</a></em>.</p>
 
-<p>In this proposal I&rsquo;ll extract the main concepts out of the <em>6 work-packages</em> and provide implementation details regarding each one of them.</p>
+<p>In this proposal we&rsquo;ll extract the main concepts out of the <em>6 work-packages</em> and provide implementation details regarding each one of them.</p>
 
 <ul>
 <li><a href="#platform">Building a Platform</a></li>
 <li><a href="#ui">Redesigning the Interface</a></li>
-<li>&hellip;</li>
 </ul>
 
 
@@ -216,15 +215,25 @@ a:hover   { text-decoration:underline; }
 </ul>
 
 
-<p>By building an application around these concepts we enable others to extend the functionality of our application in ways we didn&rsquo;t think of, or didn&rsquo;t have resources for. This results in more features, developed at a faster pace.</p>
+<p>Essentially it&rsquo;s a software program that makes services available to other software programs through Application Programming Interfaces (APIs). For example, Genesys at its current state provides many different useful functionalities. Searching, browsing and filtering accessions. A platform will let us abstract these services so that other people can customize them and use them more efficiently.</p>
 
-<p>It promotes a truly open and transparent access to data, allowing different teams to work on different functionalities. The teams will only need to know of the platform and standard data exchange formats to be able to interact with the data.</p>
+<p>Here&rsquo;s the components the platform will be interacting with:</p>
 
 <p><img src="platform.001.jpg" alt="img" /></p>
 
-<p>The components above the platform are <strong>views</strong>. This is the software that the user sees and interacts with. Views interact with the platform by <em>requesting</em> data. The map, for example, would request data that has a geographical location associated with it and then display it.</p>
+<p>The components above the platform are <strong>applications</strong>. This is the software that the user sees and interacts with. Applications interact with the platform by <em>requesting</em> data. The map, for example, would request data that has a geographical location associated with it and then display it.</p>
 
-<p>The components below the platform are the <strong>data sources</strong>. All of them make up the many different sources we might have for obtaining data. Through the platform we&rsquo;re abstracting all the implementation details so that we may refactor these components in the future, without ever breaking the views. This is a truly modular design and it will allow developers to more easily develop new tools on top of Genesys' data.</p>
+<p>The components below the platform are the <strong>data sources</strong>. These are all the different sources we might have for obtaining data. Data sources interact with the platform by <em>uploading</em> data.</p>
+
+<h4>Why should we build a Platform?</h4>
+
+<p>By building an application around this concept we enable others to extend the functionality of our application in ways we didn&rsquo;t think of, or didn&rsquo;t have resources for. This results in more features, developed at a faster pace.</p>
+
+<p>It promotes an open and transparent access to data, allowing different teams to work on different applications. The teams will only need to know of the platform and standard data exchange formats to be able to interact with the data.</p>
+
+<h4>How do we build a Platform?</h4>
+
+<p>A platform can essentially be considered a &ldquo;black box&rdquo;. The data-exchange protocols (or APIs) are the only things the users and developers will know about. Details such as &ldquo;which database does it use&rdquo; or &ldquo;what programming language is it built on&rdquo; are implementation details that the users and developers don&rsquo;t care about. This allows us to update the technology behind the platform to something more performant or easier to maintain, without breaking the applications written on top of it.</p>
 
 <h2><a name="ui"></a> Redesigning the Interface</h2>
 

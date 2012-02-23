@@ -1,12 +1,11 @@
-# Genesys 2 *(DRAFT)*
+# Genesys 2 (DRAFT)
 
 *Older document can be found [here](proposal.html)*.
 
-In this proposal I'll extract the main concepts out of the *6 work-packages* and provide implementation details regarding each one of them.
+In this proposal we'll extract the main concepts out of the *6 work-packages* and provide implementation details regarding each one of them.
 
 - [Building a Platform](#platform)
 - [Redesigning the Interface](#ui)
-- ...
 
 ## <a name="platform"></a> Building a Platform
 
@@ -15,17 +14,27 @@ Firstly, let's cover briefly what exactly a Platform is. In a nutshell any appli
 - Customize its experience
 - Extend its functionality
 - Pull data out of it
-- Interact with it through a programming interface… is a *Platform*.
+- Interact with it through a programming interface… is a *Platform*. 
 
-By building an application around these concepts we enable others to extend the functionality of our application in ways we didn't think of, or didn't have resources for. This results in more features, developed at a faster pace.
+Essentially it's a software program that makes services available to other software programs through Application Programming Interfaces (APIs). For example, Genesys at its current state provides many different useful functionalities. Searching, browsing and filtering accessions. A platform will let us abstract these services so that other people can customize them and use them more efficiently.
 
-It promotes a truly open and transparent access to data, allowing different teams to work on different functionalities. The teams will only need to know of the platform and standard data exchange formats to be able to interact with the data.  
+Here's the components the platform will be interacting with:
 
 ![img](platform.001.jpg)
 
-The components above the platform are **views**. This is the software that the user sees and interacts with. Views interact with the platform by *requesting* data. The map, for example, would request data that has a geographical location associated with it and then display it.
+The components above the platform are **applications**. This is the software that the user sees and interacts with. Applications interact with the platform by *requesting* data. The map, for example, would request data that has a geographical location associated with it and then display it.
 
-The components below the platform are the **data sources**. All of them make up the many different sources we might have for obtaining data. Through the platform we're abstracting all the implementation details so that we may refactor these components in the future, without ever breaking the views. This is a truly modular design and it will allow developers to more easily develop new tools on top of Genesys' data.
+The components below the platform are the **data sources**. These are all the different sources we might have for obtaining data. Data sources interact with the platform by *uploading* data. 
+
+#### Why should we build a Platform?
+
+By building an application around this concept we enable others to extend the functionality of our application in ways we didn't think of, or didn't have resources for. This results in more features, developed at a faster pace.
+
+It promotes an open and transparent access to data, allowing different teams to work on different applications. The teams will only need to know of the platform and standard data exchange formats to be able to interact with the data. 
+
+#### How do we build a Platform?
+
+A platform can essentially be considered a "black box". The data-exchange protocols (or APIs) are the only things the users and developers will know about. Details such as "which database does it use" or "what programming language is it built on" are implementation details that the users and developers don't care about. This allows us to update the technology behind the platform to something more performant or easier to maintain, without breaking the applications written on top of it.
 
 ## <a name="ui"></a> Redesigning the Interface
 
