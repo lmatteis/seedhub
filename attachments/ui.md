@@ -16,7 +16,7 @@ Firstly, let's cover briefly what exactly a Platform is. In a nutshell any appli
 - Pull data out of it
 - Interact with it through a programming interface… is a *Platform*. 
 
-Essentially it's a software program that makes services available to other software programs through Application Programming Interfaces (APIs). For example, Genesys at its current state provides many different useful functionalities. Searching, browsing and filtering accessions. A platform will let us abstract these services so that other people can customize them and use them more efficiently.
+Essentially it's a software program that makes services available to other software programs through Application Programming Interfaces (APIs). For example, Genesys at its current state provides many different useful functionalities. Searching, browsing and filtering data. A platform will let us abstract these services so that other people can customize them and use them more efficiently.
 
 Here's the components the platform will be interacting with:
 
@@ -26,15 +26,22 @@ The components above the platform are **applications**. This is the software tha
 
 The components below the platform are the **data sources**. These are all the different sources we might have for obtaining data. Data sources interact with the platform by *uploading* data. 
 
-#### Why should we build a Platform?
+#### Why build a Platform?
 
-By building an application around this concept we enable others to extend the functionality of our application in ways we didn't think of, or didn't have resources for. This results in more features, developed at a faster pace.
+By building a platform we enable others to extend the functionality of our application in ways we didn't think of, or didn't have resources for. This results in more features, developed at a faster pace.
 
 It promotes an open and transparent access to data, allowing different teams to work on different applications. The teams will only need to know of the platform and standard data exchange formats to be able to interact with the data. 
 
-#### How do we build a Platform?
+#### How to build a Platform?
 
 A platform can essentially be considered a "black box". The data-exchange protocols (or APIs) are the only things the users and developers will know about. Details such as "which database does it use" or "what programming language is it built on" are implementation details that the users and developers don't care about. This allows us to update the technology behind the platform to something more performant or easier to maintain, without breaking the applications written on top of it.
+
+The platform will use a [RESTful web API](http://en.wikipedia.org/wiki/Representational_state_transfer#RESTful_web_services) architecture as the foundation of its communication protocol. Some advantages of a RESTful architecture include:
+
+- Simplicity.
+- We can make good use of HTTP cache and proxy server to help us handle high load.
+- It helps us organize even a very complex system into simple resources.
+- It makes it easy for new users to use our system, even if we haven't designed it specifically for them.
 
 ## <a name="ui"></a> Redesigning the Interface
 
