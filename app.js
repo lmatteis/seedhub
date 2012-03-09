@@ -8,7 +8,7 @@ ddoc =
   , rewrites : 
     [ 
       /*{from:"/", to:'_list/index/accessionsById', query:{ limit: "51" } },*/
-      {from:"/", to:'index.html'},
+      {from:"/", to:'../../'},
       {from:"/start/:start", to:'_list/index/accessionsById', query:{ limit: "51", startkey: ":start" } }
     , {from:"/sitemap.xml", to:'_list/sitemap/accessionsById', query:{ limit: "500", startkey: "IITA_TDa-1048" } }
     , {from:"/accessions/:id", to:'_show/accessions/:id'}
