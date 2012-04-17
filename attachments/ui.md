@@ -1,6 +1,6 @@
 # Genesys 2 (DRAFT)
 
-*Older document can be found [here](proposal.html)*.
+*More technical document can be found [here](proposal.html)*.
 
 In this proposal we'll extract the main concepts out of the *6 work-packages* and provide implementation details regarding each one of them.
 
@@ -9,14 +9,22 @@ In this proposal we'll extract the main concepts out of the *6 work-packages* an
 
 ## <a name="platform"></a> Building a Platform
 
-Firstly, let's cover briefly what exactly a Platform is. In a nutshell any application which provides ways to:
+The germ plasm data that Bioversity International has gathered over the years is of extreme importance. It has put us in the unique position of being able to provide this valuable information to the world, without any constraints. However, the current methodologies for providing data are quickly becoming outdated. SINGER and Genesys make everyhing available as Excel spreadsheets (CSV) downloads, but this isn't enough if we truly want embrace the community and allow for easier **collaboration**.
+
+We should take as an example [Flickr](http://www.flickr.com/). It's a website that allows anyone to exchange pictures with their friends and families. Flickr is entirely built around the concept of a **platform**, where essentially data isn't just available as static Excel spreadsheets, but through an open [Application Programming Interface](http://en.wikipedia.org/wiki/Application_programming_interface) (API for short). This means that anyone can write their own program to present public Flickr data (like photos, video, tags, profiles or groups) in new and different ways. Here you can see some examples of the applications that the **community** has written, using the Flick platform: [Flickr apps](http://www.flickr.com/services/).
+
+Genesys 2 should allow the same type of collaboration that Flickr allows, by building a platform.
+
+#### What is a Platform?
+
+In a nutshell any application which provides ways to:
 
 - Customize its experience
 - Extend its functionality
 - Pull data out of it
-- Interact with it through a programming interface… is a *Platform*. 
+- Interact with it through a programming interface… is a platform. 
 
-Essentially it's a software program that makes services available to other software programs through Application Programming Interfaces (APIs). For example, Genesys at its current state provides many different useful functionalities. Searching, browsing and filtering data. A platform will let us abstract these services so that other people can customize them and use them more efficiently.
+Essentially it's a software program that makes services available to other software programs through Application Programming Interfaces (APIs). For example, Genesys at its current state provides many different useful functionalities. Searching, browsing and filtering data. A platform will let us independently use these services so that other people can customize them and use them more efficiently, to fit their needs.
 
 Here's the components the platform will be interacting with:
 
@@ -30,7 +38,7 @@ The components below the platform are the **data sources**. These are all the di
 
 By building a platform we enable others to extend the functionality of our application in ways we didn't think of, or didn't have resources for. This results in more features, developed at a faster pace.
 
-It promotes an open and transparent access to data, allowing different teams to work on different applications. The teams will only need to know of the platform and standard data exchange formats to be able to interact with the data. 
+It promotes collaboration through an open and transparent access to data, allowing different teams to work on different applications. The teams will only need to know of the platform and standard data exchange formats to be able to interact with the data. 
 
 #### How to build a Platform?
 

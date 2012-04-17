@@ -193,7 +193,7 @@ a:hover   { text-decoration:underline; }
 <body>
 <h1>Genesys 2 (DRAFT)</h1>
 
-<p><em>Older document can be found <a href="proposal.html">here</a></em>.</p>
+<p><em>More technical document can be found <a href="proposal.html">here</a></em>.</p>
 
 <p>In this proposal we&rsquo;ll extract the main concepts out of the <em>6 work-packages</em> and provide implementation details regarding each one of them.</p>
 
@@ -205,17 +205,25 @@ a:hover   { text-decoration:underline; }
 
 <h2><a name="platform"></a> Building a Platform</h2>
 
-<p>Firstly, let&rsquo;s cover briefly what exactly a Platform is. In a nutshell any application which provides ways to:</p>
+<p>The germ plasm data that Bioversity International has gathered over the years is of extreme importance. It has put us in the unique position of being able to provide this valuable information to the world, without any constraints. However, the current methodologies for providing data are quickly becoming outdated. SINGER and Genesys make everyhing available as Excel spreadsheets (CSV) downloads, but this isn&rsquo;t enough if we truly want embrace the community and allow for easier <strong>collaboration</strong>.</p>
+
+<p>We should take as an example <a href="http://www.flickr.com/">Flickr</a>. It&rsquo;s a website that allows anyone to exchange pictures with their friends and families. Flickr is entirely built around the concept of a <strong>platform</strong>, where essentially data isn&rsquo;t just available as static Excel spreadsheets, but through an open <a href="http://en.wikipedia.org/wiki/Application_programming_interface">Application Programming Interface</a> (API for short). This means that anyone can write their own program to present public Flickr data (like photos, video, tags, profiles or groups) in new and different ways. Here you can see some examples of the applications that the <strong>community</strong> has written, using the Flick platform: <a href="http://www.flickr.com/services/">Flickr apps</a>.</p>
+
+<p>Genesys 2 should allow the same type of collaboration that Flickr allows, by building a platform.</p>
+
+<h4>What is a Platform?</h4>
+
+<p>In a nutshell any application which provides ways to:</p>
 
 <ul>
 <li>Customize its experience</li>
 <li>Extend its functionality</li>
 <li>Pull data out of it</li>
-<li>Interact with it through a programming interface… is a <em>Platform</em>.</li>
+<li>Interact with it through a programming interface… is a platform.</li>
 </ul>
 
 
-<p>Essentially it&rsquo;s a software program that makes services available to other software programs through Application Programming Interfaces (APIs). For example, Genesys at its current state provides many different useful functionalities. Searching, browsing and filtering data. A platform will let us abstract these services so that other people can customize them and use them more efficiently.</p>
+<p>Essentially it&rsquo;s a software program that makes services available to other software programs through Application Programming Interfaces (APIs). For example, Genesys at its current state provides many different useful functionalities. Searching, browsing and filtering data. A platform will let us independently use these services so that other people can customize them and use them more efficiently, to fit their needs.</p>
 
 <p>Here&rsquo;s the components the platform will be interacting with:</p>
 
@@ -229,7 +237,7 @@ a:hover   { text-decoration:underline; }
 
 <p>By building a platform we enable others to extend the functionality of our application in ways we didn&rsquo;t think of, or didn&rsquo;t have resources for. This results in more features, developed at a faster pace.</p>
 
-<p>It promotes an open and transparent access to data, allowing different teams to work on different applications. The teams will only need to know of the platform and standard data exchange formats to be able to interact with the data.</p>
+<p>It promotes collaboration through an open and transparent access to data, allowing different teams to work on different applications. The teams will only need to know of the platform and standard data exchange formats to be able to interact with the data.</p>
 
 <h4>How to build a Platform?</h4>
 
